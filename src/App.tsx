@@ -6,18 +6,19 @@ function App() {
   const [input , setInput] = useState("");// للمدخلات 
   const [output, setOutput] = useState("");//للمخرجات 
 
-  const OnClick = (value: string) => {//وظيفة للتعامل مع ضغط الأزرار وإضافة القيم للمدخلات
-   setInput(input + value);// إضافة القيمة إلى المدخلات
+  const OnClick = (value: string) => {
+   setInput(input + value);
   };
   
   const handleEvaluate = () => {
     try {
-      setOutput(eval(input)); // حساب النتيجة باستخدام eval()
+      setOutput(eval(input)); 
     } catch (e) {
-      setOutput("خطأ"); // في حال حدوث خطأ، عرض "خطأ"
+      setOutput("خطأ"); 
     }
   };
-
+ 
+   const Num= [1,2,3,4,5,6,7,8,9,0];
  
   return (
     <>
@@ -26,23 +27,23 @@ function App() {
                 <div className='Calculator'>
                 <div className='output' >
                   <p>
-                  <div >{input}</div> {/* المدخلات */}
-                  {output !== "" && <div className="equal-sign">= {output}</div>}
+                  <div >{input}</div> 
+                  {output !== "" && <div >= {output}</div>}
                   </p>
                 
                 </div>
+                
+           
+               
+                
 
                <div className='button' >
-                 <button onClick={()=> OnClick("1")}> 1</button>
-                 <button onClick={()=> OnClick("2")}> 2</button>
-                 <button onClick={()=> OnClick("3")}> 3</button>
-                 <button onClick={()=> OnClick("4")}> 4</button>
-                 <button onClick={()=> OnClick("5")}> 5</button>
-                 <button onClick={()=> OnClick("6")}> 6</button>
-                 <button onClick={()=> OnClick("7")}> 7</button>
-                 <button onClick={()=> OnClick("8")}> 8</button>
-                 <button onClick={()=> OnClick("9")}> 9</button>                
-                 <button onClick={()=> OnClick("0")}> 0</button>
+                  {
+                    Num.map(Num => (
+                      <button key={Num} onClick={()=> OnClick(Num.toString())}> {Num}</button>
+                    ))
+                  }
+
                  <button onClick={()=> OnClick("-")}> -</button>
                  <button onClick={()=> OnClick("+")}> +</button>
                </div>

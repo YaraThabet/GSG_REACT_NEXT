@@ -8,7 +8,7 @@ interface Ioutput {
 const Output: React.FC<Ioutput> = ({output}) => {
     return (
         <div>
-            {/* النتيجه al */}
+           
             
                 <p>{output}</p>
       </div>
