@@ -23,7 +23,8 @@ function App() {
   return (
     <>
      <div>
-              <div className='body' >
+             <div className='body' >
+
                 <div className='Calculator'>
                 <div className='output' >
                   <p>
@@ -33,9 +34,6 @@ function App() {
                 
                 </div>
                 
-           
-               
-                
 
                <div className='button' >
                   {
@@ -43,24 +41,17 @@ function App() {
                       <button key={Num} onClick={()=> OnClick(Num.toString())}> {Num}</button>
                     ))
                   }
-
                  <button onClick={()=> OnClick("-")}> -</button>
                  <button onClick={()=> OnClick("+")}> +</button>
-               </div>
+              </div>
                  <div className='yo'>
-                 <button onClick={() => handleEvaluate()} >=</button>  
+                  <button onClick={() => handleEvaluate()} >=</button>  
                  </div>
-            </div>
-
-                </div>
-
-                
-    </div>
-     
- 
-       
-    </>
+              </div>
+           </div>       
+     </div>
+   </>
   )
 }
 
-export default App
+export default App ;
